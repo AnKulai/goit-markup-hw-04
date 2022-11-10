@@ -88,6 +88,7 @@ header {
   background-color: var(--color-footer);
   width: 100%;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 0 auto;
 }
 a {
   text-decoration: none;
@@ -184,7 +185,8 @@ a {
   margin-right: 10px;
 }
 
-.information:hover > svg {
+.information:hover > svg,
+.information:focus > svg {
   fill: var(--color-hover);
 }
 /* .information::before {
@@ -223,6 +225,7 @@ a {
   height: 120px;
   background-size: 70px;
   margin-bottom: 30px;
+  border-radius: 4px;
 }
 
 .description-icon:nth-of-type(1)::before {
@@ -290,34 +293,38 @@ a {
 .social-link {
   display: flex;
   justify-content: center;
+  gap: 10px;
 }
 
 .social-icon {
   width: 44px;
   height: 44px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 50%;
-  /* background-color: rgb(167, 0, 0); */
-}
-.social-icon:hover {
-  background-color: #2196f3;
-  fill: white;
-}
-
-.social-icon:hover .icon {
-  fill: white;
-}
-
-.icon {
-  fill: #afb1b8;
 }
 
 .social-team {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  gap: 22px;
+}
+
+.social-team:hover,
+.social-team:focus {
+  background-color: #2196f3;
+  outline: none;
+  fill: white;
+}
+.social-team:hover .icon,
+.social-team:focus .icon {
+  fill: white;
+}
+
+.icon {
+  fill: #afb1b8;
 }
 
 .clients {
@@ -328,18 +335,33 @@ a {
 .clients > li {
   width: 170px;
   height: 92px;
+
+}
+
+
+.clients-link {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #afb1b8;
-  border-radius: 4px;
-  fill: #afb1b8;
   cursor: pointer;
 }
 
-.clients > li:hover {
+.clients-link:focus,
+.clients-link:hover {
+  outline: none;
   border: 1px solid #2196f3;
+}
+.clients-link:focus > svg,
+.clients-link:hover > svg {
   fill: #2196f3;
+}
+
+.clients-icon {
+  fill: #afb1b8;
 }
 
 footer {
@@ -459,4 +481,8 @@ address {
   border-bottom: 1px solid var(--portfolio-border);
   border-left: 1px solid var(--portfolio-border);
   border-right: 1px solid var(--portfolio-border);
+}
+.cards:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
